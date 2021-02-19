@@ -1,0 +1,6 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 19. 2. 2021
+  Features:
+    - Removes entity construction of belts, undergrounds and splitters
+    - Makes robots cheaper and the technology is researched from the beginning
