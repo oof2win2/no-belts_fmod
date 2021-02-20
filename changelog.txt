@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 20. 2. 2021
+  Features:
+    - Adds compatibility with FE+ and boblogistics by moving data-updates to data-final-fixes
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 19. 2. 2021
+  Features:
+    - Adds an achievement upon launching a rocket
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 19. 2. 2021
   Features:

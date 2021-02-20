@@ -95,4 +95,11 @@ data:extend({
         },
         order = "c-k-d",
     },
+    -- achievement for launching a rocket at all
+    {
+        type = "finish-the-game-achievement",
+        name = "rocket-launch-without-belts",
+        icon = "__base__/graphics/achievement/there-is-no-spoon.png",
+        icon_size = 128
+    },
 })
