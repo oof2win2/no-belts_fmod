@@ -41,24 +41,24 @@ enableRecipes("roboport")
 enableRecipes("construction-robot")
 enableRecipes("logistic-chest-passive-provider")
 enableRecipes("logistic-chest-storage")
-
+local costMultiplier = settings.startup["robot-costs-multipler"].value or 1
 local robotRecipe = {
-    {"iron-plate", 1},
-    {"iron-gear-wheel", 1},
-    {"electronic-circuit", 1},
+    {"iron-plate", 1*costMultiplier},
+    {"iron-gear-wheel", 1*costMultiplier},
+    {"electronic-circuit", 1*costMultiplier},
 }
 
 local chestRecipe = {
-    {"iron-plate", 3},
-    {"electronic-circuit", 1},
+    {"iron-plate", 3*costMultiplier},
+    {"electronic-circuit", 1*costMultiplier},
 }
 
 data.raw.recipe["construction-robot"].ingredients = robotRecipe
 data.raw.recipe["logistic-robot"].ingredients = robotRecipe
 data.raw.recipe["roboport"].ingredients = {
-    {"iron-plate", 25},
-    {"iron-gear-wheel", 10},
-    {"electronic-circuit", 10}
+    {"iron-plate", 25*costMultiplier},
+    {"iron-gear-wheel", 10*costMultiplier},
+    {"electronic-circuit", 10*costMultiplier}
 }
 
 data.raw.recipe["logistic-chest-passive-provider"].ingredients = chestRecipe

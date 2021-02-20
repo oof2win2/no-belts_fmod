@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4
+Date: 20. 2. 2021
+  Changes:
+    - Removes power armor being researched upon game start
+    - Option to have quick start (disabled by default)
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 20. 2. 2021
   Features:

@@ -49,14 +49,14 @@ data:extend({
     --early worker speed
     {
         type = "technology",
-        name = "early-worker-robots-speed",
+        name = "early-worker-robots-speed-1",
         icon_size = 128,
         icon = "__base__/graphics/technology/worker-robots-speed.png",
         effects =
         {
             {
             type = "worker-robot-speed",
-            modifier = 0.45
+            modifier = 0.25
             },
 
         },
@@ -71,19 +71,68 @@ data:extend({
         },
         order = "c-k-d",
     },
+    {
+        type = "technology",
+        name = "early-worker-robots-speed-2",
+        icon_size = 128,
+        icon = "__base__/graphics/technology/worker-robots-speed.png",
+        effects =
+        {
+            {
+            type = "worker-robot-speed",
+            modifier = 0.35
+            },
+
+        },
+        prerequisites = {"early-worker-robots-speed-1"},
+        unit = {
+            count = 100,
+            ingredients =
+            {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1},
+            },
+            time = 30
+        },
+        order = "c-k-d",
+    },
     --early worker cargo capacity
     {
         type = "technology",
-        name = "early-worker-robots-storage",
+        name = "early-worker-robots-storage-1",
         icon_size = 128,
         icon = "__base__/graphics/technology/worker-robots-storage.png",
         effects =
         {
             {
             type = "worker-robot-storage",
-            modifier = 3
+            modifier = 1
             },
         },
+        unit = {
+            count = 250,
+            ingredients =
+            {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1},
+            },
+            time = 30
+        },
+        order = "c-k-d",
+    },
+    {
+        type = "technology",
+        name = "early-worker-robots-storage-2",
+        icon_size = 128,
+        icon = "__base__/graphics/technology/worker-robots-storage.png",
+        effects =
+        {
+            {
+            type = "worker-robot-storage",
+            modifier = 1
+            },
+        },
+        prerequisites = {"early-worker-robots-storage-1"},
         unit = {
             count = 250,
             ingredients =
