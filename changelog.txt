@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+Date: 2021-02-21
+  Changes:
+    - Re-balancing of power armor quick start (addition of logistic chests)
+  Bugfixes:
+    - Now not crashing due to non-inclusion debugadapter
+---------------------------------------------------------------------------------------------------
 Version: 0.4.1
 Date: 2021-02-20
   Changes:

@@ -1,5 +1,3 @@
-require('__debugadapter__/debugadapter.lua')
-
 script.on_init(function ()
     for index, force in pairs(game.forces) do
         game.forces[index].technologies["construction-robotics"].researched = true
@@ -19,6 +17,8 @@ script.on_init(function ()
             local created_items = remote.call("freeplay", "get_created_items")
             created_items["roboport"] = 10
             created_items["logistic-robot"] = 100
+            created_items["logistic-chest-requester"] = 100
+            created_items["logistic-chest-passive-provider"] = 100
             remote.call("freeplay", "set_created_items", created_items)
         end
     end
