@@ -1,13 +1,7 @@
-local belts = {}
 for _,category in pairs{"transport-belt","splitter","underground-belt"} do
     for name,proto in pairs(data.raw[category]) do
-        belts[name] = proto.localised_name or {"entity-name." .. name}
-    end
-end
-for name,proto in pairs(data.raw.item) do
-    if proto.place_result and belts[proto.place_result] then
-        proto.localised_name = proto.localised_name or belts[proto.place_result]
-        proto.place_result = nil
+        -- belts[name] = proto.localised_name or {"entity-name." .. name}
+        proto.collision_mask = {"item-layer", "object-layer", "player-layer", "water-tile", "ground-tile", "transport-belt-layer"}
     end
 end
 

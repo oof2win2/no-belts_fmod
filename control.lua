@@ -5,6 +5,7 @@ script.on_init(function ()
         game.forces[index].technologies["logistic-system"].researched = true
 
         if settings.startup["give-quickstart-parmor"].value == true then
+            if (remote.interfaces["freeplay"] == nil) then return end
             local created_items = remote.call("freeplay", "get_created_items")
             created_items["power-armor"] = 1
             created_items["solar-panel-equipment"] = 21
@@ -14,6 +15,7 @@ script.on_init(function ()
             remote.call("freeplay", "set_created_items", created_items)
         end
         if settings.startup["give-quickstart-stuff"].value == true then
+            if (remote.interfaces["freeplay"] == nil) then return end
             local created_items = remote.call("freeplay", "get_created_items")
             created_items["roboport"] = 10
             created_items["logistic-robot"] = 100
