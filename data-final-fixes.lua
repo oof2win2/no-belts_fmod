@@ -31,32 +31,37 @@ local function enableRecipes(name)
     end
 end
 
-enableRecipes("roboport")
-enableRecipes("construction-robot")
-enableRecipes("logistic-chest-passive-provider")
-enableRecipes("logistic-chest-storage")
-local costMultiplier = settings.startup["robot-costs-multipler"].value or 1
-local robotRecipe = {
-    {"iron-plate", 1*costMultiplier},
-    {"iron-gear-wheel", 1*costMultiplier},
-    {"electronic-circuit", 1*costMultiplier},
-}
+if settings.startup["research-start-tech"].value then
+	enableRecipes("roboport")
+	enableRecipes("construction-robot")
+	enableRecipes("logistic-chest-passive-provider")
+	enableRecipes("logistic-chest-storage")
+end
 
-local chestRecipe = {
-    {"iron-plate", 3*costMultiplier},
-    {"electronic-circuit", 1*costMultiplier},
-}
+if settings.startup["cheaper-robot-recipes"] then
+	local costMultiplier = settings.startup["robot-costs-multipler"].value or 1
+	local robotRecipe = {
+		{"iron-plate", 1*costMultiplier},
+		{"iron-gear-wheel", 1*costMultiplier},
+		{"electronic-circuit", 1*costMultiplier},
+	}
 
-data.raw.recipe["construction-robot"].ingredients = robotRecipe
-data.raw.recipe["logistic-robot"].ingredients = robotRecipe
-data.raw.recipe["roboport"].ingredients = {
-    {"iron-plate", 25*costMultiplier},
-    {"iron-gear-wheel", 10*costMultiplier},
-    {"electronic-circuit", 10*costMultiplier}
-}
+	local chestRecipe = {
+		{"iron-plate", 3*costMultiplier},
+		{"electronic-circuit", 1*costMultiplier},
+	}
 
-data.raw.recipe["logistic-chest-passive-provider"].ingredients = chestRecipe
-data.raw.recipe["logistic-chest-storage"].ingredients = chestRecipe
-data.raw.recipe["logistic-chest-active-provider"].ingredients = chestRecipe
-data.raw.recipe["logistic-chest-requester"].ingredients = chestRecipe
-data.raw.recipe["logistic-chest-buffer"].ingredients = chestRecipe
+	data.raw.recipe["construction-robot"].ingredients = robotRecipe
+	data.raw.recipe["logistic-robot"].ingredients = robotRecipe
+	data.raw.recipe["roboport"].ingredients = {
+		{"iron-plate", 25*costMultiplier},
+		{"iron-gear-wheel", 10*costMultiplier},
+		{"electronic-circuit", 10*costMultiplier}
+	}
+
+	data.raw.recipe["logistic-chest-passive-provider"].ingredients = chestRecipe
+	data.raw.recipe["logistic-chest-storage"].ingredients = chestRecipe
+	data.raw.recipe["logistic-chest-active-provider"].ingredients = chestRecipe
+	data.raw.recipe["logistic-chest-requester"].ingredients = chestRecipe
+	data.raw.recipe["logistic-chest-buffer"].ingredients = chestRecipe
+end

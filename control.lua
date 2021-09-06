@@ -1,8 +1,10 @@
 script.on_init(function ()
     for index, force in pairs(game.forces) do
-        game.forces[index].technologies["construction-robotics"].researched = true
-        game.forces[index].technologies["logistic-robotics"].researched = true
-        game.forces[index].technologies["logistic-system"].researched = true
+		if settings.startup["research-start-tech"].value then
+			game.forces[index].technologies["construction-robotics"].researched = true
+			game.forces[index].technologies["logistic-robotics"].researched = true
+			game.forces[index].technologies["logistic-system"].researched = true
+		end
 
         if settings.startup["give-quickstart-parmor"].value == true then
             if (remote.interfaces["freeplay"] == nil) then return end
